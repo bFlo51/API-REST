@@ -16,11 +16,15 @@ services:
     depends_on:
       - db
     volumes:
-      - ./php/:/var/www/html/
+      - ./:/var/www/html/
     ports:
       - "8100:80"
     stdin_open: true
     tty: true
+    # TODO : lancer commande au démarrage
+    # command: 
+     # - " dockr-php-ext-install pdo pdo_mysql"
+     # - service apache2 restart # ATTENTION SI GROS PB C'EST QUE LE CONTAINER BOOT EN BOUCLE , sinon lancer la commande dans le container
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin

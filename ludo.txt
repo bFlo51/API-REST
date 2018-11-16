@@ -1,0 +1,20 @@
+Logs docker : 
+
+docker logs -f php_web 
+
+
+Entrer dans container : 
+
+docker exec -it php_web bash
+
+
+Installer une extension php :
+
+docker-php-ext-install pdo_mysql
+
+
+Lancer une commande mysql depuis l'extérieur ( = initialiser la base)
+- copier le dump dans le container DB :
+docker cp mondump.sql db:/root/temp.sql
+- lancer le dump 
+docker exec db sh -c 'exec mysql -hlocalhost -uroot -p"$MYSQL_ROOT_PASSWORD" < /root/temp.sql'
