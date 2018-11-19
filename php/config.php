@@ -1,7 +1,7 @@
 <?php
 $config = [
   'db' => [
-     'servername' =>'localhost:9191',
+     'servername' =>'localhost:8080',
      'username' => 'charnal',
      'password' => 'abcd',
      'dbname' => 'db',
