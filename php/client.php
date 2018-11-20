@@ -47,8 +47,9 @@
 
 		var stringData = "";
 
-		for (var i = 0; i < Object.keys(res).length-1 ; i++) {
+		for (var i = 0; i < res.result.length ; i++) {
 		  console.log(i);
+		  console.log(res.result[i]["nom"]);
 		  stringData += "<tr><td>"  + res.result[i]["id"] + "</td><td>" + res.result[i]["nom"] + "</td><td>" + res.result[i]["classe"] + "</td><td>"+ res.result[i]["niveau"] + "</td></tr>";
 		}
 		console.log(stringData);
