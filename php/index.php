@@ -12,15 +12,13 @@ $container['db'] = function ($c) {
        $options  = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
        					 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
        );
-       error_log("CONNECTION " . $db['servername'] ." " . $db['dbname'] . " " . $db['username'] . " " . $db['password'] . " Is it working ?");
        $pdo = new PDO("mysql:host=" . $db['servername'] 
-       					. ";dbname=" . $db['dbname'],
+       					. ";port=" . $db['port']. ";dbname=" . $db['dbname'],
        $db['username'], $db['password'],$options);
-       error_log("PDO working ? " . $pdo);
        return $pdo;
    }
    catch(\Exception $ex){
-   	erro_log("Erreur PDO " . $ex->getMessage());
+   	error_log("Erreur PDO " . $ex->getMessage());
        return $ex->getMessage();
    }
    
@@ -31,7 +29,7 @@ $app->post('/personnage', function ($request, $response) {
    try{
        $con = $this->db;
        $sql = "INSERT INTO `personnage`(`nom`, `niveau`,`classe`) VALUES (:nom,:niveau,:classe)";
-       error_log("AAA" . $con . "KO :(");
+       //error_log("AAA" . $con . "KO :(");
        $pre  = $con->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
        $values = array(
        ':nom' => $request->getParam('nom'),
