@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db
--- Généré le :  Dim 11 nov. 2018 à 16:43
+-- Généré le :  jeu. 29 nov. 2018 à 17:52
 -- Version du serveur :  5.7.23
 -- Version de PHP :  7.2.8
 
@@ -37,6 +37,16 @@ CREATE TABLE `personnage` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Déchargement des données de la table `personnage`
+--
+
+INSERT INTO `personnage` (`id`, `nom`, `niveau`, `classe`, `create_date`) VALUES
+(5, 'Sterilet2', '50', 'iop', '2018-11-20 17:32:10'),
+(6, 'Penombrelle', '150', 'Roublard', '2018-11-20 17:34:16'),
+(7, 'Penombrelle2', '150', 'Roublard', '2018-11-20 17:37:39'),
+(8, 'Penombrelle3', '150', 'Roublard', '2018-11-20 17:41:21');
+
+--
 -- Index pour les tables déchargées
 --
 
@@ -44,9 +54,7 @@ CREATE TABLE `personnage` (
 -- Index pour la table `personnage`
 --
 ALTER TABLE `personnage`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `nom` (`nom`),
-  ADD UNIQUE KEY `niveau` (`niveau`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -56,7 +64,7 @@ ALTER TABLE `personnage`
 -- AUTO_INCREMENT pour la table `personnage`
 --
 ALTER TABLE `personnage`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,0 +1,8 @@
+html{background-color: grey; !important}
+h1{
+	text-align: center;
+}
+#tableau{
+	position: absolute;
+	margin-top: 1%;
+}
